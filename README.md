@@ -12,8 +12,11 @@ Features:
 How to install:
 
 1.Download some web server software, e.g. UwAmp Wamp Server
+
 2.Install it. (Default location: "C:\UwAmp")
+
 3.Download git project and copy it in UwAmp location (e.g. "C:\UwAmp\www" )
+
 4.Start UwAmp and go to http://localhost/myapp/#/movies
 
 Screens:
