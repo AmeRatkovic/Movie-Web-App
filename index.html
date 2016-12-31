@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+
+<head>
+    <title>Movie Web App</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.iconeasy.com/icon/ico/System/NX10/Movies.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.10/angular.min.js"></script>
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js">
+    </script>
+    <link rel="stylesheet" href="style.css" type="text/css" >
+    <script src="app.js"></script>
+  
+   
+</head>
+
+<body>
+
+    <div class="container" id="cont">
+        <div class="row">
+
+            <div ng-init="data.countResult=0" class="container" ng-controller="btnController">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" ui-sref="movies" ng-model='movie' ng-click="toogle()" ng-hide='amer1x'>Movies</button>
+                    <button type="button" class="btn btn-default" ui-sref="shows" ng-model='show' ng-click="toogle()" ng-hide='amer1x'>Shows</button>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-3"> </div>
+                <div ui-view=''>
+                </div>
+                <div class="col-sm-3"> </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

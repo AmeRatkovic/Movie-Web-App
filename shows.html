@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-sm-3"></div>
+
+    <div ng-hide='amer1x'>
+        <form class="form-search form-inline">
+            <input type="text" class="form-control search-query" ng-model="searchText2" ng-change="change2(text)" placeholder="Search..." />
+        </form>
+    </div>
+
+    <br>
+    <br><br>
+
+    <div ng-if='!list2 && !amer2'>
+
+        <div ng-repeat="items in showss">
+            <div class="nesto">
+                <div class="col-xs-4" ng-if="$index%2==0">
+
+                    <img ng-if="  $index%2==0" ng-click="open3(showss[$index])" ui-sref="shows.detail({ id: {{showss[$index].id}}  })" ng-src="http://image.tmdb.org/t/p/w342/{{showss[$index].poster_path}}">
+                    <span ng-if=" $index%2==0" class="caption"><h2> {{showss[$index].name}}</h2></span>
+
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-4" ng-if="($index+1)%2==1 ">
+
+                    <img ng-if="($index+1)%2==1 " ng-init="$index=$index+1" ng-click="open3(showss[$index+1])" ui-sref="shows.detail({ id: {{showss[$index].id}}  })" ng-src="http://image.tmdb.org/t/p/w342/{{showss[$index].poster_path}}">
+                    <span ng-if="($index+1)%2==1 " class="caption"> <h2>  {{showss[$index+1].name}} </h2></span>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div ng-if="!amer2 && !searchText2" ng-model="list2">
+
+
+        <div ng-repeat="items in shows">
+            <div class="nesto" ng-if="($index<10)">
+                <div class="col-xs-4" ng-if="$index%2==0">
+
+                    <img ng-if="($index<10) && $index%2==0" ng-click="open2(shows[$index])" ui-sref="shows.detail({ id: {{shows[$index].id}}  })" ng-src="http://image.tmdb.org/t/p/w342/{{items.poster_path}}">
+                    <span ng-if="($index<10) && $index%2==0" class="caption"><h2> {{shows[$index].name}}</h2></span>
+
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-4" ng-if="($index+1)%2==1 ">
+
+                    <img ng-if="($index<10)&& ($index+1)%2==1 " ng-init="$index=$index+1" ng-click="open2(shows[$index+1])" ui-sref="shows.detail({ id: {{shows[$index].id}}  })" ng-src="http://image.tmdb.org/t/p/w342/{{shows[$index].poster_path}}">
+                    <span ng-if="($index<10)&& ($index+1)%2==1 " class="caption"> <h2>  {{shows[$index+1].name}} </h2></span>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div ng-if="!amer2 && !searchText2" ng-model="list2">
+        <center class="pagn">
+
+            <a href="/myapp/#/shows" class="btn btn-default" ng-click="prev2()"><span class="glyphicon glyphicon-arrow-left"></span> prev</a>
+            <span>&nbsp;&nbsp;&nbsp;{{page2}}&nbsp;&nbsp;&nbsp;</span>
+
+            <a href="/myapp/#/shows" class="btn btn-default" ng-click="next2()"><span class="glyphicon glyphicon-arrow-right"></span> next</a>
+
+        </center>
+    </div>
+
+    <div ng-if="(!list2 ) || ( amer2 ) " ui-view="detail" ng model="amer2"></div>
+
+
+</div>
