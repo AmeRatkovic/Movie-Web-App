@@ -4,10 +4,16 @@ Simple Movie Web App with Angular 1.5.10
 Features:
 
 -display 10 top rated TV shows or 10 top rated movies
+
 -live search for movies and TV shows after more than 3 characters entered
+
 -back button returns to the previous screen
+
 -pagination implemented
+
 -http://docs.themoviedb.apiary.io/# API used for data
+
+
 
 How to install:
 
@@ -18,6 +24,8 @@ How to install:
 3.Download git project and copy it in UwAmp location (e.g. "C:\UwAmp\www" )
 
 4.Start UwAmp and go to http://localhost/myapp/#/movies
+
+
 
 Screens:
 
